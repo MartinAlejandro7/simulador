@@ -1,70 +1,302 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+/* ====== VARIABLES OFICIALES BANCO PICHINCHA ====== */
+:root {
+    --azul-principal: #003366;
+    --azul-oscuro: #002244;
+    --azul-claro: #0055aa;
+    --azul-brillante: #0066cc;
+    --blanco: #ffffff;
+    --gris-claro: #f8fafc;
+    --gris-medio: #e2e8f0;
+    --gris-borde: #cbd5e1;
+    --texto-oscuro: #1e293b;
+    --sombra-suave: 0 4px 12px rgba(0, 51, 102, 0.1);
+    --sombra-fuerte: 0 8px 24px rgba(0, 51, 102, 0.2);
+    --borde-resaltado: 0 0 0 3px rgba(0, 51, 102, 0.15);
+}
+
+/* ====== RESET GENERAL ====== */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-.container {
-    width: 400px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    line-height: 1.5;
+    background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 34, 68, 0.9)), 
+                url('tarjetas.png') center/cover no-repeat fixed;
+    min-height: 100vh;
+    padding: 0;
 }
 
+/* ====== ENCABEZADO ====== */
+.navbar {
+    background: rgba(255, 255, 255, 0.98);
+    padding: 14px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--azul-principal);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--azul-principal);
+    letter-spacing: 0.3px;
+}
+
+.logo img {
+    height: 36px;
+    width: auto;
+}
+
+.tagline {
+    font-size: 13px;
+    color: var(--azul-principal);
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* ====== CONTENEDOR PRINCIPAL ====== */
+.container {
+    width: 100%;
+    max-width: 430px;
+    margin: 28px auto;
+    padding: 28px 25px;
+    background: var(--blanco);
+    border-radius: 16px;
+    box-shadow: var(--sombra-fuerte);
+    border-top: 5px solid var(--azul-principal);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 51, 102, 0.25);
+}
+
+/* ====== TÍTULOS DESTACADOS ====== */
 h1 {
     text-align: center;
-    margin-bottom: 20px;
+    color: var(--azul-principal);
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 22px;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--azul-principal), var(--azul-brillante));
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
 }
 
 h2 {
-    margin-top: 20px;
-    font-size: 18px;
+    font-size: 16px;
+    color: var(--azul-principal);
+    font-weight: 700;
+    padding: 8px 14px;
+    margin: 22px 0 14px;
+    border-left: 5px solid var(--azul-principal);
+    background: linear-gradient(90deg, rgba(0, 51, 102, 0.06), transparent);
+    border-radius: 0 10px 10px 0;
 }
 
+/* ====== ETIQUETAS ====== */
 label {
     display: block;
-    margin-top: 10px;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--texto-oscuro);
+    margin-bottom: 6px;
+    margin-top: 16px;
 }
 
+/* ====== CAMPOS DE TEXTO (MÁS DESTACADOS) ====== */
 input {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+    padding: 13px 16px;
+    border: 2px solid var(--gris-borde);
+    border-radius: 10px;
+    font-size: 15px;
+    background: var(--gris-claro);
+    transition: all 0.3s ease;
+    outline: none;
+    font-weight: 500;
 }
 
-p {
-    margin-top: 10px;
+input:hover {
+    border-color: var(--azul-claro);
+    background: var(--blanco);
 }
 
-span {
-    font-weight: bold;
-    color: #2c3e50;
+input:focus {
+    border-color: var(--azul-principal);
+    background: var(--blanco);
+    box-shadow: var(--borde-resaltado);
+    transform: scale(1.01);
 }
 
-.buttons {
-    margin-top: 20px;
+input::placeholder {
+    font-size: 13px;
+    color: #94a3b8;
+    font-style: italic;
+}
+
+/* ====== TARJETAS DE RESULTADOS ====== */
+.result-card {
+    margin-top: 16px;
+    padding: 18px;
+    background: var(--gris-claro);
+    border-radius: 12px;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--gris-medio);
+    transition: all 0.3s ease;
+}
+
+.result-card:hover {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+.result-card.highlight {
+    border-left: 5px solid var(--azul-principal);
+    background: linear-gradient(90deg, rgba(0, 51, 102, 0.05), var(--gris-claro));
+    border-color: rgba(0, 51, 102, 0.1);
+}
+
+.result-card p {
+    font-size: 15px;
+    margin: 9px 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.result-card span {
+    font-weight: 800;
+    color: var(--azul-principal);
+    font-size: 15px;
+}
+
+/* ====== BOTONES IMPACTANTES ====== */
+.buttons {
+    margin-top: 26px;
+    display: flex;
+    gap: 15px;
 }
 
 button {
-    width: 48%;
-    padding: 10px;
+    flex: 1;
+    padding: 14px 12px;
     border: none;
-    border-radius: 5px;
-    background-color: #3498db;
-    color: white;
-    font-weight: bold;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 800;
     cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
 }
 
-button:hover {
-    background-color: #2980b9;
+/* Botón principal */
+#btnCalcularCredito {
+    background: linear-gradient(135deg, var(--azul-principal), var(--azul-brillante));
+    color: var(--blanco);
+    box-shadow: 0 4px 14px rgba(0, 51, 102, 0.35);
+}
+
+#btnCalcularCredito:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 7px 20px rgba(0, 51, 102, 0.45);
+    background: linear-gradient(135deg, var(--azul-brillante), var(--azul-principal));
+}
+
+#btnCalcularCredito:active {
+    transform: translateY(0) scale(0.99);
+}
+
+/* Botón secundario */
+#btnReiniciar {
+    background: var(--blanco);
+    color: var(--azul-principal);
+    border: 2px solid var(--azul-principal);
+    box-shadow: 0 4px 10px rgba(0, 51, 102, 0.15);
+}
+
+#btnReiniciar:hover {
+    background: rgba(0, 51, 102, 0.05);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 16px rgba(0, 51, 102, 0.2);
+}
+
+#btnReiniciar:active {
+    transform: translateY(0) scale(0.99);
+}
+
+/* ====== RESPONSIVE PERFECTO ====== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px 20px;
+        text-align: center;
+    }
+
+    .container {
+        width: 92%;
+        margin: 20px auto;
+        padding: 22px 18px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    button {
+        width: 100%;
+        padding: 13px;
+    }
+
+    input:focus {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    .result-card p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .result-card span {
+        text-align: left;
+    }
 }

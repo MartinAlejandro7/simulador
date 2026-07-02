@@ -3,46 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Crédito</title>
+    <title>MASC BANCK - Simulador de Crédito</title>
     <link rel="stylesheet" href="simulador.css">
     <script src="funciones.js"></script>
     <script src="simulador.js"></script>
 </head>
+
 <body>
+    <header class="navbar">
+        <div class="logo">
+            <span>MASC BANCK</span>
+        </div>
+        <div class="tagline">Soluciones financieras para ti</div>
+    </header>
 
     <div class="container">
         <h1>Simulador de Crédito</h1>
 
         <h2>Datos financieros</h2>
         <label for="txtIngresos">Ingresos:</label>
-        <input type="text" id="txtIngresos">
+        <input type="text" id="txtIngresos" placeholder="Ingresa tus ingresos mensuales">
 
         <label for="txtEgresos">Egresos:</label>
-        <input type="text" id="txtEgresos">
+        <input type="text" id="txtEgresos" placeholder="Ingresa tus gastos mensuales">
 
-        <p>Disponible: <span id="spnDisponible"></span></p>
-        <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
-
+        <div class="result-card">
+            <p>Disponible: <span id="spnDisponible"></span></p>
+            <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
+        </div>
+        
         <h2>Solicitud de crédito</h2>
-        <label for="txtMonto">Monto:</label>
-        <input type="text" id="txtMonto">
+        <label for="txtMonto">Monto solicitado:</label>
+        <input type="text" id="txtMonto" placeholder="Monto del préstamo">
 
         <label for="txtPlazo">Plazo en años:</label>
-        <input type="text" id="txtPlazo">
+        <input type="text" id="txtPlazo" placeholder="Tiempo para pagar">
 
-        <label for="txtTasaInteres">Tasa de interés:</label>
-        <input type="text" id="txtTasaInteres">
+        <label for="txtTasaInteres">Tasa de interés anual (%):</label>
+        <input type="text" id="txtTasaInteres" placeholder="Tasa de interés aplicable">
 
-        <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
-        <p>Total préstamo: <span id="spnTotalPrestamo"></span></p>
-        <p>Cuota mensual: <span id="spnCuotaMensual"></span></p>
-        <p>Estado de crédito: <span id="spnEstadoCredito">ANALIZANDO...</span></p>
+        <div class="result-card highlight">
+            <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
+            <p>Total del préstamo: <span id="spnTotalPrestamo"></span></p>
+            <p>Cuota mensual: <span id="spnCuotaMensual"></span></p>
+            <p>Estado de crédito: <span id="spnEstadoCredito">ANALIZANDO...</span></p>
+        </div>
 
         <div class="buttons">
             <button id="btnCalcularCredito" onclick="calcular();">Calcular Crédito</button>
             <button id="btnReiniciar">Reiniciar</button>
         </div>
     </div>
-
 </body>
 </html>
