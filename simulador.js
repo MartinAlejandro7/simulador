@@ -67,4 +67,14 @@ function calcular(){
     let cuotaMensualRedondeado = spnCuotaMensual.toFixed(2)
     let cuotaMensual = document.getElementById("spnCuotaMensual")
     cuotaMensual.textContent = cuotaMensualRedondeado;
+
+    let spnEstadoCredito = aprobarCredito(capturarCapacidadPago, spnCuotaMensual)
+
+    let capEstadoCredito = document.getElementById("spnEstadoCredito")
+    
+    if (spnEstadoCredito){
+        capEstadoCredito.textContent = "CREDITO APROBADO"
+    }else{
+        capEstadoCredito.textContent = "CREDITO RECHAZADO"
+    }
 }
