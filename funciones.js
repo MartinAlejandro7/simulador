@@ -17,3 +17,10 @@ function calcularInteresSimple(monto, tasa, plazoAnios){
     let valorInteres = (plazoAnios * monto * tasa)/100
     return valorInteres
 }
+
+function calcularTotalPagar(monto, interes){
+    let calcularTotal = monto + interes
+    let valorTotalPagar = calcularTotal + 100;
+    return valorTotalPagar
+
+}

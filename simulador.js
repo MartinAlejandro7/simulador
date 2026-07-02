@@ -55,5 +55,10 @@ function calcular(){
     let interesValor = document.getElementById("spnInteresPagar");
     interesValor.textContent= totalInteres;
     
+    //invocar a la funcion calcularTotalPagar
+    let totalPagar = calcularTotalPagar(montoSolicitadoInt, calculointeresSimple)
+    
 
+    let spnTotalPrestamo = document.getElementById("spnTotalPrestamo")
+    spnTotalPrestamo.textContent =totalPagar;
 }
