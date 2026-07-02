@@ -8,8 +8,12 @@ function calcularDisponibilidad(ingresos, egresos){
     }
     return calcularValor
 }
-
 function calcularCapacidadPago(montoDisponible){
     let capacaidadPago = montoDisponible * 0.5
     return capacaidadPago
+}
+
+function calcularInteresSimple(monto, tasa, plazoAnios){
+    let valorInteres = (plazoAnios * monto * tasa)/100
+    return valorInteres
 }

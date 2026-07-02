@@ -13,19 +13,47 @@ function calcular(){
     //Llamar a la funcion CalcularDisponiblidad 
 
     let total = calcularDisponibilidad(valorIngresosFloat, valorEgresosFloat);
-    let totalValor = total.toFixed(2)
-    let contenedorDisponible =document.getElementById("spnDisponible")
-    contenedorDisponible.textContent = totalValor
+    let totalValor = total.toFixed(2);
+    let contenedorDisponible =document.getElementById("spnDisponible");
+    contenedorDisponible.textContent = totalValor;
 
     //Llamar a la funcion CAlCULARCAPACIDADPAGO 
 
-    let capturarCapacidadPago = calcularCapacidadPago(totalValor)
-    let capacidadTotal = capturarCapacidadPago.toFixed(2)
+    let capturarCapacidadPago = calcularCapacidadPago(totalValor);
+    let capacidadTotal = capturarCapacidadPago.toFixed(2);
 
     //capturar la caja de CAPACIDADPAGO y MOSTRAR EN PANTALLA
 
-    let capacacidadPago = document.getElementById("spnCapacidadPago")
-    capacacidadPago.textContent= capacidadTotal
+    let capacacidadPago = document.getElementById("spnCapacidadPago");
+    capacacidadPago.textContent= capacidadTotal;
     
+    //capturar la caja de MONTO SOLICITADO, PLAZO AÑOS, TASA ANUEAL
+
+    let cajaMontoSolicitado = document.getElementById("txtMonto");
+    let cajaPlazoAnios = document.getElementById("txtPlazo");
+    let cajaTasaAnual = document.getElementById("txtTasaInteres");
+
+    // string 
+
+    let montoSolicitadoStr = cajaMontoSolicitado.value;
+    let plazoAniosStr = cajaPlazoAnios.value;
+    let tasaAnualStr = cajaTasaAnual.value;
+
+    // string a entero
+
+    let montoSolicitadoInt = parseInt(montoSolicitadoStr);
+    let tasaAnualInt = parseInt(tasaAnualStr);
+    let plazoAniosInt = parseInt(plazoAniosStr);
     
+
+    //llamar a la funcion calcularInteresSimple y guardar en una variable
+
+    let calculointeresSimple = calcularInteresSimple(montoSolicitadoInt,tasaAnualInt,plazoAniosInt,)
+    let totalInteres = calculointeresSimple.toFixed(2)
+    //capturar lblInteresValor 
+
+    let interesValor = document.getElementById("spnInteresPagar");
+    interesValor.textContent= totalInteres;
+    
+
 }
