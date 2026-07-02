@@ -1,0 +1,24 @@
+prompt 1
+Actua como un desarrollador experto en JavaScript. Necesito validar un formulario de simulador de crédito. Los mensajes de error deben aparecer debajo de cada input, sin usar alert(), y deben mostrarse en color rojo y en cursiva. No modifiques los IDs existentes.
+
+prompt 2
+Agrega validaciones para que todos los campos sean obligatorios. Si un campo esta vacio, debe mostrarse un mensaje de error debajo del input correspondiente utilizando JavaScript.
+
+prompt 3
+Implementa validaciones para que los campos de ingresos, egresos, monto, plazo y tasa de interés acepten únicamente valores numericos. Si el usuario ingresa letras o caracteres especiales, muestra un mensaje de error debajo del campo.
+
+prompt 4
+Agrega una validacion para que todos los campos numericos permitan como maximo cinco digitos. Si el usuario supera ese límite, muestra un mensaje de error debajo del input.
+
+prompt 5
+Implementa validaciones especificas para un simulador de crédito: ingresos mayores que cero, egresos no negativos, monto solicitado entre 100 y 99999, plazo entre 1 y 4 años y tasa de interés mayor que cero y menor o igual al 20%.
+
+Prompt 6
+Haz que las validaciones se ejecuten automáticamente al salir de cada campo utilizando el evento onblur, sin modificar los IDs existentes del formulario.
+
+prompt 7
+Implementa una funcion que valide todos los campos cuando el usuario presione el botón "Calcular Credito". Si existe algun error, debe mostrarse debajo del campo correspondiente y el calculo no debe ejecutarse hasta que todas las validaciones sean correctas.
+
+prompt 8
+Agrega una validacion para verificar que los egresos no sean mayores que los ingresos. Si esta condición no se cumple, muestra un mensaje de error debajo del campo de egresos.
+

@@ -250,6 +250,13 @@ button {
 #btnReiniciar:active {
     transform: translateY(0) scale(0.99);
 }
+.error{
+    color: red;
+    font-style: italic;
+    font-size: 14px;
+    display: block;
+    margin-top: 4px;
+}
 
 /* ====== RESPONSIVE PERFECTO ====== */
 @media (max-width: 768px) {
