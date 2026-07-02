@@ -17,4 +17,15 @@ function calcular(){
     let contenedorDisponible =document.getElementById("spnDisponible")
     contenedorDisponible.textContent = totalValor
 
+    //Llamar a la funcion CAlCULARCAPACIDADPAGO 
+
+    let capturarCapacidadPago = calcularCapacidadPago(totalValor)
+    let capacidadTotal = capturarCapacidadPago.toFixed(2)
+
+    //capturar la caja de CAPACIDADPAGO y MOSTRAR EN PANTALLA
+
+    let capacacidadPago = document.getElementById("spnCapacidadPago")
+    capacacidadPago.textContent= capacidadTotal
+    
+    
 }
