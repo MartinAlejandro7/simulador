@@ -58,7 +58,13 @@ function calcular(){
     //invocar a la funcion calcularTotalPagar
     let totalPagar = calcularTotalPagar(montoSolicitadoInt, calculointeresSimple)
     
-
+    //capturar TotalPrestamo
     let spnTotalPrestamo = document.getElementById("spnTotalPrestamo")
     spnTotalPrestamo.textContent =totalPagar;
+
+    //invocar a la funcion calcularCuotaMensual y mostrar en pantalla 
+    let spnCuotaMensual = calcularCuotaMensual(totalPagar, plazoAniosInt)
+    let cuotaMensualRedondeado = spnCuotaMensual.toFixed(2)
+    let cuotaMensual = document.getElementById("spnCuotaMensual")
+    cuotaMensual.textContent = cuotaMensualRedondeado;
 }
